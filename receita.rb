@@ -24,6 +24,7 @@ class Receita
 
   def self.busca(termo)
     db = SQLite3::Database.open('cookbook.db')
+    termo = '%' + termo + '%'
     receitas_encontradas = db.execute <<-SQL, *termo
       select * from receitas where nome LIKE ?
     SQL

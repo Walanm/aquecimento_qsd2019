@@ -40,7 +40,6 @@ end
 def buscar_receitas
   print 'Digite uma palavra para procurar: '
   busca = gets.chomp
-  busca = '%' + busca + '%'
   receitas_encontradas = Receita.busca(busca)
   puts receitas_encontradas
   puts 'Nenhuma receita encontrada' if receitas_encontradas.empty?
